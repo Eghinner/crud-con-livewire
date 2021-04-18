@@ -5,7 +5,6 @@
 	    <h3 class="text-2xl w-auto font-bold border-b-2 border-blue-600">Create</h3>
 	<div>
 
-
 	  <label for="input_task" class="bg-white px-1">
 		  Task
 		  <br>

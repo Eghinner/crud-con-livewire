@@ -1,6 +1,17 @@
-<div x-data="{menu:false}" @click.away="menu=false">
+<div 
+	x-data="{menu:false}"
+	@click.away="menu=false"
+
+	x-data="alertComponent()"
+	x-init="$watch('openAlertBox', value => {
+	   if(value){
+	     setTimeout(function () {
+	       openAlertBox = false
+	     }, 2000)
+	   }
+	 })"
+>
 <div class="py-2">
-	
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         	<button 
@@ -11,6 +22,7 @@
         	</button>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
+<x-spinner/>
             
     
 	<table class="text-left w-full border-collapse">
