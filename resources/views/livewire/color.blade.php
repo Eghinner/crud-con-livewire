@@ -26,12 +26,15 @@
 	    <tr class="hover:bg-grey-lighter">
 	      <td class="py-4 px-6 border-b border-grey-light" x-data="{showChildren:false}" @click.away="showChildren=false">
 
-
-	    <h5 class="text-xl cursor-pointer" @click.prevent="showChildren=!showChildren">
-	    	<i class="fas fa-grip-lines mr-2"></i>
+		<div class="flex">
+	    <h5 class="text-xl">
+	    	<i class="fas fa-grip-lines mr-2 cursor-move"></i>
 	     	{{$task->task}}
 	    </h5>
-
+	    <small @click.prevent="showChildren=!showChildren" class="cursor-pointer ml-3 text-gray-700 font-semibold">
+	    	desc<i class="fas fa-angle-down text-gray-600 ml-1"></i>
+	    </small>
+	    </div>
 	      <p class="text-gray-600" x-show="showChildren">
 	      	{{$task->description}}
 	      </p>
@@ -62,6 +65,7 @@ class="backdrop-filter backdrop-blur-sm absolute z-10 w-screen h-screen shadow f
         x-transition:enter-start="scale-0"
         x-transition:leave="transition duration-50 transform ease-in"
         x-transition:leave-end="opacity-0 scale-120"
+        style="display: none;" 
 
 class="z-30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex flex-col justify-around">
     @if($updateMode)
@@ -72,12 +76,4 @@ class="z-30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/
 </div>
 
 </div>
-<script>
-	const dragon = document.getElementById('dragon');
-	new Sortable(dragon, {
-	    animation: 150,
-	    ghostClass: 'blue-background-class'
-	});
-</script>
-
 </div>

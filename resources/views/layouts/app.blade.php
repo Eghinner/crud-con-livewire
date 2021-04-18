@@ -43,5 +43,7 @@
         @stack('modals')
 
         @livewireScripts
+        <script src="{{asset('js/sorta.js')}}"></script>
+        <script src="{{asset('js/Sortable.min.js')}}"></script>
     </body>
 </html>

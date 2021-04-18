@@ -6,7 +6,7 @@
     </x-slot>      
                   
                     @livewire('color')
-<script src="{{asset('js/sorta.js')}}"></script>
+{{-- <script src="{{asset('js/sorta.js')}}"></script> --}}
 {{-- Fontawesome --}}
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 {{-- Sortable --}}
